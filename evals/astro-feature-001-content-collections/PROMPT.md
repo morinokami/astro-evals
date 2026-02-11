@@ -1,0 +1,1 @@
+Set up Content Collections for the blog posts in src/content/blog/ and create a blog listing page at src/pages/blog/index.astro. Each blog post has title (string) and pubDate (date) frontmatter fields. Display all posts sorted by date with their title and publication date.

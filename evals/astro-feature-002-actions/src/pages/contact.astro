@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+// TODO: Implement the contact form using Astro Actions
+// Define the action in src/actions/index.ts
+// Wire the form to use the action with proper validation
+---
+
+<Layout title="Contact Us">
+  <main>
+    <h1>Contact Us</h1>
+    <form>
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" />
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </main>
+</Layout>

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+.env*.local
+.vercel
+.claude
+.DS_Store
+evals/**/output-*/.worktrees/

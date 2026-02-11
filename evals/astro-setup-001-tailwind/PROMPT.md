@@ -1,0 +1,1 @@
+Add Tailwind CSS to this Astro project and style the header on the index page using Tailwind utility classes. Apply background color, text color, padding, and font styling to the header and its contents.

@@ -1,0 +1,18 @@
+{
+  "name": "astro-evals",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "eval": "agent-eval",
+    "eval:smoke": "agent-eval --smoke",
+    "eval:dry": "agent-eval --dry",
+    "export-results": "tsx scripts/export-results.ts"
+  },
+  "devDependencies": {
+    "tsx": "4.21.0",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "@vercel/agent-eval": "0.5.0"
+  }
+}

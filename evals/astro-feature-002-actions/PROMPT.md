@@ -1,0 +1,1 @@
+Implement the contact form on the contact page using Astro Actions. The form should accept a name and message field, both required. Define the action with server-side validation and a handler that processes the submission. Wire the form to use the action directly.
