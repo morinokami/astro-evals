@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with Astro"
-pubDate: 2024-01-15
+pubDate: 2026-01-15
 ---
 
 # Getting Started with Astro

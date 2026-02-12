@@ -1,13 +1,27 @@
 import { expect, test } from 'vitest';
-import { readFileSync, existsSync } from 'fs';
-import { join } from 'path';
-import { globSync } from 'glob';
+import { readFileSync, existsSync, globSync } from 'node:fs';
+import { join } from 'node:path';
 
-test('Tailwind CSS is installed as a dependency', () => {
+test('Tailwind CSS v4 dependencies are installed', () => {
   const pkgPath = join(process.cwd(), 'package.json');
   const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
   const allDeps = { ...pkg.dependencies, ...pkg.devDependencies };
+  // Both tailwindcss and the Vite plugin are required for Tailwind v4
   expect(allDeps).toHaveProperty('tailwindcss');
+  expect(allDeps).toHaveProperty('@tailwindcss/vite');
+});
+
+test('@tailwindcss/vite is configured as a Vite plugin in astro config', () => {
+  const configPaths = ['astro.config.mjs', 'astro.config.ts', 'astro.config.js'].map(
+    (f) => join(process.cwd(), f),
+  );
+  const configPath = configPaths.find((p) => existsSync(p));
+  expect(configPath).toBeDefined();
+
+  const content = readFileSync(configPath!, 'utf-8');
+  // Should import @tailwindcss/vite and register it in vite plugins
+  expect(content).toMatch(/@tailwindcss\/vite/);
+  expect(content).toMatch(/plugins/);
 });
 
 test('A CSS file imports Tailwind', () => {
@@ -21,7 +35,7 @@ test('A CSS file imports Tailwind', () => {
   expect(hasTailwindImport).toBe(true);
 });
 
-test('Layout or page imports the CSS file', () => {
+test('Layout or page imports the Tailwind CSS file', () => {
   const layoutPath = join(process.cwd(), 'src', 'layouts', 'Layout.astro');
   const pagePath = join(process.cwd(), 'src', 'pages', 'index.astro');
 
@@ -32,17 +46,23 @@ test('Layout or page imports the CSS file', () => {
   expect(combined).toMatch(/import\s+['"].*\.css['"]/);
 });
 
-test('Index page uses Tailwind utility classes', () => {
+test('Index page uses Tailwind utility classes for all required styling categories', () => {
   const pagePath = join(process.cwd(), 'src', 'pages', 'index.astro');
   const content = readFileSync(pagePath, 'utf-8');
 
-  const hasTailwindClasses = content.match(/class\s*=\s*["'][^"']*\b(bg-|text-|p-|px-|py-|m-|mx-|my-|flex|grid|font-|rounded|shadow|w-|h-)/);
-  expect(hasTailwindClasses).not.toBeNull();
+  // PROMPT requires: background color, text color, padding, and font styling
+  expect(content).toMatch(/\bbg-/);   // background color
+  expect(content).toMatch(/\btext-/); // text color or size
+  expect(content).toMatch(/\b(p-|px-|py-|pt-|pb-|pl-|pr-|ps-|pe-)/); // padding
+  expect(content).toMatch(/\bfont-/); // font styling
 });
 
 test('Does NOT use the legacy @astrojs/tailwind integration', () => {
-  const configPath = join(process.cwd(), 'astro.config.mjs');
-  if (existsSync(configPath)) {
+  const configPaths = ['astro.config.mjs', 'astro.config.ts', 'astro.config.js'].map(
+    (f) => join(process.cwd(), f),
+  );
+  const configPath = configPaths.find((p) => existsSync(p));
+  if (configPath) {
     const content = readFileSync(configPath, 'utf-8');
     expect(content).not.toMatch(/@astrojs\/tailwind/);
   }

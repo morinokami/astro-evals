@@ -1,6 +1,6 @@
 ---
 title: "Understanding Content Collections"
-pubDate: 2024-02-20
+pubDate: 2026-02-20
 ---
 
 # Understanding Content Collections
