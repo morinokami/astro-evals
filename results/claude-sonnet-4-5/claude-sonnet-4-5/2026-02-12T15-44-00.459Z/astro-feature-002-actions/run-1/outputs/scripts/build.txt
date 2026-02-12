@@ -1,0 +1,29 @@
+
+> build
+> astro build
+
+▶ Astro collects anonymous usage data.
+  This information helps us improve Astro.
+  Run "astro telemetry disable" to opt-out.
+  https://astro.build/telemetry
+
+15:46:01 [@astrojs/node] Enabling sessions with filesystem storage
+15:46:01 [content] Syncing content
+15:46:01 [content] Synced content
+15:46:01 [types] Generated 46ms
+15:46:01 [build] output: "server"
+15:46:01 [build] mode: "server"
+15:46:01 [build] directory: /home/sandbox/workspace/dist/
+15:46:01 [build] adapter: @astrojs/node
+15:46:01 [build] Collecting build info...
+15:46:01 [build] ✓ Completed in 54ms.
+15:46:01 [build] Building server entrypoints...
+15:46:01 [vite] ✓ built in 410ms
+15:46:01 [build] ✓ Completed in 424ms.
+
+ prerendering static routes 
+15:46:01 ✓ Completed in 4ms.
+
+15:46:01 [build] Rearranging server assets...
+15:46:01 [build] Server built in 486ms
+15:46:01 [build] Complete!

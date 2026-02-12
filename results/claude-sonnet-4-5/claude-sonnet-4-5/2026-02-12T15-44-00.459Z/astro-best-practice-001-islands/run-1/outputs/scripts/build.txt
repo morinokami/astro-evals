@@ -1,0 +1,38 @@
+
+> build
+> astro build
+
+▶ Astro collects anonymous usage data.
+  This information helps us improve Astro.
+  Run "astro telemetry disable" to opt-out.
+  https://astro.build/telemetry
+
+15:46:01 [content] Syncing content
+15:46:01 [content] Synced content
+15:46:01 [types] Generated 75ms
+15:46:01 [build] output: "static"
+15:46:01 [build] mode: "static"
+15:46:01 [build] directory: /home/sandbox/workspace/dist/
+15:46:01 [build] Collecting build info...
+15:46:01 [build] ✓ Completed in 81ms.
+15:46:01 [build] Building static entrypoints...
+15:46:01 [vite] ✓ built in 249ms
+15:46:01 [build] ✓ Completed in 263ms.
+
+ building client (vite) 
+15:46:01 [vite] transforming...
+15:46:02 [vite] ✓ 28 modules transformed.
+15:46:02 [vite] rendering chunks...
+15:46:02 [vite] computing gzip size...
+15:46:02 [vite] dist/_astro/FavoriteButton.XuImnxrk.js    1.26 kB │ gzip:  0.79 kB
+15:46:02 [vite] dist/_astro/index.DiEladB3.js             7.85 kB │ gzip:  3.05 kB
+15:46:02 [vite] dist/_astro/client.Dc9Vh3na.js          186.62 kB │ gzip: 58.54 kB
+15:46:02 [vite] ✓ built in 453ms
+
+ generating static routes 
+15:46:02 ▶ src/pages/index.astro
+15:46:02   └─ /index.html (+8ms) 
+15:46:02 ✓ Completed in 19ms.
+
+15:46:02 [build] 1 page(s) built in 822ms
+15:46:02 [build] Complete!

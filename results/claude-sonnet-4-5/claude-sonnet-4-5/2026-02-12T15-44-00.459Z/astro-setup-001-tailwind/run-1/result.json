@@ -1,0 +1,57 @@
+{
+  "status": "failed",
+  "duration": 133.129,
+  "model": "claude-sonnet-4-5",
+  "transcriptPath": "./transcript.json",
+  "transcriptRawPath": "./transcript-raw.jsonl",
+  "o11y": {
+    "totalTurns": 7,
+    "toolCalls": {
+      "file_read": 3,
+      "file_write": 1,
+      "file_edit": 2,
+      "shell": 3,
+      "web_fetch": 0,
+      "web_search": 0,
+      "glob": 1,
+      "grep": 0,
+      "list_dir": 0,
+      "agent_task": 0,
+      "unknown": 4
+    },
+    "totalToolCalls": 14,
+    "webFetches": [],
+    "filesRead": [
+      "/home/sandbox/workspace/package.json",
+      "/home/sandbox/workspace/src/pages/index.astro",
+      "/home/sandbox/workspace/src/layouts/Layout.astro"
+    ],
+    "filesModified": [
+      "/home/sandbox/workspace/src/styles/global.css",
+      "/home/sandbox/workspace/src/layouts/Layout.astro",
+      "/home/sandbox/workspace/src/pages/index.astro"
+    ],
+    "shellCommands": [
+      {
+        "command": "ls -la",
+        "success": true
+      },
+      {
+        "command": "npm install tailwindcss@next @tailwindcss/vite@next",
+        "success": true
+      },
+      {
+        "command": "mkdir -p src/styles",
+        "success": true
+      }
+    ],
+    "errors": [],
+    "thinkingBlocks": 0
+  },
+  "outputPaths": {
+    "eval": "./outputs/eval.txt",
+    "scripts": {
+      "build": "./outputs/scripts/build.txt"
+    }
+  }
+}

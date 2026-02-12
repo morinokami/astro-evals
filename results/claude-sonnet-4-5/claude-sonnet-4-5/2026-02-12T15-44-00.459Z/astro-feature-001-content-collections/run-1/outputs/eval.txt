@@ -1,0 +1,54 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/home/sandbox/workspace[39m
+
+ [31m❯[39m EVAL.ts [2m([22m[2m7 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 4[2mms[22m[39m
+   [32m✓[39m Content collection config exists at src/content.config.ts (v5 Content Layer API)[32m 0[2mms[22m[39m
+   [32m✓[39m Collection config uses defineCollection and exports collections[32m 0[2mms[22m[39m
+   [32m✓[39m Collection uses glob loader from astro/loaders[32m 0[2mms[22m[39m
+[31m   [31m×[31m Collection schema validates title and pubDate with Zod[39m[32m 2[2mms[22m[39m
+   [32m✓[39m Blog listing page uses getCollection to query posts[32m 0[2mms[22m[39m
+   [32m✓[39m Blog listing page accesses entry data via .data property[32m 0[2mms[22m[39m
+   [32m✓[39m Blog listing page sorts posts by date[32m 0[2mms[22m[39m
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m6 passed[39m[22m[90m (7)[39m
+[2m   Start at [22m 15:46:06
+[2m   Duration [22m 73ms[2m (transform 15ms, setup 0ms, import 21ms, tests 4ms, environment 0ms)[22m
+
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m EVAL.ts[2m > [22mCollection schema validates title and pubDate with Zod
+[31m[1mAssertionError[22m: expected 'import { defineCollection, z } from \…' to match /astro\/zod/zod[39m
+
+[32m- Expected:[39m 
+/astro\/zod/
+
+[31m+ Received:[39m 
+"import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
+
+const blog = defineCollection({
+  loader: glob({
+    pattern: \"**/*.md\",
+    base: \"./src/content/blog\"
+  }),
+  schema: z.object({
+    title: z.string(),
+    pubDate: z.coerce.date(),
+  }),
+});
+
+export const collections = { blog };
+"
+
+[36m [2m❯[22m EVAL.ts:[2m47:19[22m[39m
+    [90m 45| [39m
+    [90m 46| [39m  // Zod should be imported from 'astro/zod' (v5), not 'astro:content'…
+    [90m 47| [39m  [34mexpect[39m(content)[33m.[39m[34mtoMatch[39m([36m/astro\/zod/[39m)[33m;[39m
+    [90m   | [39m                  [31m^[39m
+    [90m 48| [39m  [34mexpect[39m(content)[33m.[39m[34mtoMatch[39m([36m/z\.object/[39m)[33m;[39m
+    [90m 49| [39m  [34mexpect[39m(content)[33m.[39m[34mtoMatch[39m([36m/title/[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+

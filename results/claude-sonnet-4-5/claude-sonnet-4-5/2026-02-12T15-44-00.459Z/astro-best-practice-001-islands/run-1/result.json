@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "duration": 121.988,
+  "model": "claude-sonnet-4-5",
+  "transcriptPath": "./transcript.json",
+  "transcriptRawPath": "./transcript-raw.jsonl",
+  "o11y": {
+    "totalTurns": 7,
+    "toolCalls": {
+      "file_read": 5,
+      "file_write": 0,
+      "file_edit": 2,
+      "shell": 2,
+      "web_fetch": 0,
+      "web_search": 0,
+      "glob": 2,
+      "grep": 0,
+      "list_dir": 0,
+      "agent_task": 0,
+      "unknown": 1
+    },
+    "totalToolCalls": 12,
+    "webFetches": [],
+    "filesRead": [
+      "/home/sandbox/workspace/src/components/ProductList.astro",
+      "/home/sandbox/workspace/src/components/FavoriteButton.tsx",
+      "/home/sandbox/workspace/src/pages/index.astro",
+      "/home/sandbox/workspace/src/layouts/Layout.astro",
+      "/home/sandbox/workspace/package.json"
+    ],
+    "filesModified": [
+      "/home/sandbox/workspace/src/components/FavoriteButton.tsx",
+      "/home/sandbox/workspace/src/components/ProductList.astro"
+    ],
+    "shellCommands": [
+      {
+        "command": "mcp list-tools 2>/dev/null | grep -i astro || echo \"No Astro MCP server found\"",
+        "success": true
+      },
+      {
+        "command": "ls -la /home/sandbox/workspace/src",
+        "success": true
+      }
+    ],
+    "errors": [],
+    "thinkingBlocks": 0
+  },
+  "outputPaths": {
+    "eval": "./outputs/eval.txt",
+    "scripts": {
+      "build": "./outputs/scripts/build.txt"
+    }
+  }
+}

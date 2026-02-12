@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "duration": 136.683,
+  "model": "claude-sonnet-4-5",
+  "transcriptPath": "./transcript.json",
+  "transcriptRawPath": "./transcript-raw.jsonl",
+  "o11y": {
+    "totalTurns": 10,
+    "toolCalls": {
+      "file_read": 6,
+      "file_write": 1,
+      "file_edit": 1,
+      "shell": 4,
+      "web_fetch": 0,
+      "web_search": 0,
+      "glob": 0,
+      "grep": 0,
+      "list_dir": 0,
+      "agent_task": 0,
+      "unknown": 6
+    },
+    "totalToolCalls": 18,
+    "webFetches": [],
+    "filesRead": [
+      "/home/sandbox/workspace/src/content/blog",
+      "/home/sandbox/workspace/src/content/blog/first-post.md",
+      "/home/sandbox/workspace/src/content/blog/second-post.md",
+      "/home/sandbox/workspace/src/pages/blog/index.astro",
+      "/home/sandbox/workspace/src/content.config.ts"
+    ],
+    "filesModified": [
+      "/home/sandbox/workspace/src/content.config.ts",
+      "/home/sandbox/workspace/src/pages/blog/index.astro"
+    ],
+    "shellCommands": [
+      {
+        "command": "find src/content/blog -type f -name \"*.md\" -o -name \"*.mdx\" 2>/dev/null | head -10",
+        "success": false
+      },
+      {
+        "command": "ls -la src/content/blog 2>/dev/null || echo \"Directory does not exist\"",
+        "success": true
+      },
+      {
+        "command": "ls -la src/ 2>/dev/null || echo \"src directory does not exist\"",
+        "success": true
+      },
+      {
+        "command": "ls -la src/content.config.* 2>/dev/null || echo \"No content.config file found\"",
+        "success": true
+      }
+    ],
+    "errors": [],
+    "thinkingBlocks": 0
+  },
+  "outputPaths": {
+    "eval": "./outputs/eval.txt",
+    "scripts": {
+      "build": "./outputs/scripts/build.txt"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+
+> build
+> astro build
+
+▶ Astro collects anonymous usage data.
+  This information helps us improve Astro.
+  Run "astro telemetry disable" to opt-out.
+  https://astro.build/telemetry
+
+15:46:07 [content] Syncing content
+15:46:07 [content] Synced content
+15:46:07 [types] Generated 253ms
+15:46:07 [build] output: "static"
+15:46:07 [build] mode: "static"
+15:46:07 [build] directory: /home/sandbox/workspace/dist/
+15:46:07 [build] Collecting build info...
+15:46:07 [build] ✓ Completed in 257ms.
+15:46:07 [build] Building static entrypoints...
+15:46:08 [vite] ✓ built in 292ms
+15:46:08 [build] ✓ Completed in 307ms.
+
+ generating static routes 
+15:46:08 ▶ src/pages/index.astro
+15:46:08   └─ /index.html (+2ms) 
+15:46:08 ▶ src/pages/blog/index.astro
+15:46:08   └─ /blog/index.html (+2ms) 
+15:46:08 ✓ Completed in 9ms.
+
+15:46:08 [build] 2 page(s) built in 576ms
+15:46:08 [build] Complete!
